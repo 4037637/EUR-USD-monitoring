@@ -1,4 +1,13 @@
 {
-  "last_alert": null,
-  "history": []
+  "last_alert": {
+    "rate": 1.1446,
+    "timestamp": "19.07.2026 17:35:50"
+  },
+  "history": [
+    {
+      "rate": 1.1446,
+      "timestamp": "19.07.2026 17:35:50",
+      "alert_sent": false
+    }
+  ]
 }

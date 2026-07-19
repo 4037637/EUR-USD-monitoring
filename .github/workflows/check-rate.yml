@@ -1,0 +1,47 @@
+name: Check EUR/USD rate
+
+on:
+  repository_dispatch:
+    types: [check-rate]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: check-rate
+  cancel-in-progress: false
+
+jobs:
+  check-rate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run rate check
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python check_rate.py
+
+      - name: Commit updated rates_log.json
+        if: always()
+        run: |
+          if ! git diff --quiet -- rates_log.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add rates_log.json
+            git commit -m "chore: update rates_log.json"
+            git push
+          else
+            echo "rates_log.json не изменился, коммит не требуется"
+          fi

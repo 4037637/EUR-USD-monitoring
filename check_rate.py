@@ -30,7 +30,6 @@ LOG_PATH = Path(__file__).resolve().parent / "rates_log.json"
 MADRID_TZ = ZoneInfo("Europe/Madrid")
 ALERT_THRESHOLD = 0.001
 LOG_TIME_FORMAT = "%d.%m.%Y %H:%M:%S"
-MESSAGE_TIME_FORMAT = "%H:%M"
 
 # Yahoo rejects requests without a browser-like User-Agent.
 REQUEST_HEADERS = {
@@ -111,7 +110,6 @@ def main() -> int:
 
     now = now_madrid()
     log_timestamp = now.strftime(LOG_TIME_FORMAT)
-    message_timestamp = now.strftime(MESSAGE_TIME_FORMAT)
 
     log = load_log()
     last_alert = log.get("last_alert")
@@ -134,11 +132,9 @@ def main() -> int:
             direction=direction,
             diff=diff,
             old_rate=last_alert["rate"],
-            old_time=last_alert["timestamp"].split(" ")[1][:5]
-            if " " in last_alert["timestamp"]
-            else last_alert["timestamp"],
+            old_time=last_alert["timestamp"],
             new_rate=rate,
-            new_time=message_timestamp,
+            new_time=log_timestamp,
         )
         try:
             send_telegram(bot_token, chat_id, message)

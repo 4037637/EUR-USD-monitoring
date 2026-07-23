@@ -70,15 +70,38 @@ def save_log(data: dict) -> None:
         f.write("\n")
 
 
+def parse_chat_ids(raw: str) -> list[str]:
+    return [chat_id.strip() for chat_id in raw.split(",") if chat_id.strip()]
+
+
 def send_telegram(bot_token: str, chat_id: str, text: str) -> None:
     url = TELEGRAM_API_URL.format(token=bot_token)
     response = requests.post(
         url, json={"chat_id": chat_id, "text": text}, timeout=15
     )
+    print(f"[debug] Telegram chat_id={chat_id}: status_code={response.status_code}")
     response.raise_for_status()
     payload = response.json()
     if not payload.get("ok"):
         raise RuntimeError(f"Telegram API вернул ошибку: {payload}")
+
+
+def send_telegram_to_all(bot_token: str, chat_ids: list[str], text: str) -> bool:
+    """Send to every recipient, continuing past individual failures.
+
+    Returns True if at least one message was delivered successfully.
+    """
+    any_success = False
+    for chat_id in chat_ids:
+        try:
+            send_telegram(bot_token, chat_id, text)
+            any_success = True
+        except Exception as exc:  # noqa: BLE001 - report and continue to next recipient
+            print(
+                f"Ошибка отправки сообщения в Telegram для chat_id={chat_id}: {exc}",
+                file=sys.stderr,
+            )
+    return any_success
 
 
 def build_message(direction: str, diff: float, old_rate: float, old_time: str,
@@ -93,11 +116,20 @@ def build_message(direction: str, diff: float, old_rate: float, old_time: str,
 
 def main() -> int:
     bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not bot_token or not chat_id:
+    chat_id_raw = os.environ.get("TELEGRAM_CHAT_ID")
+    if not bot_token or not chat_id_raw:
         print(
             "Ошибка: не заданы переменные окружения TELEGRAM_BOT_TOKEN и/или "
             "TELEGRAM_CHAT_ID",
+            file=sys.stderr,
+        )
+        return 1
+
+    chat_ids = parse_chat_ids(chat_id_raw)
+    print(f"[debug] Распознано chat_id из TELEGRAM_CHAT_ID: {len(chat_ids)}")
+    if not chat_ids:
+        print(
+            "Ошибка: TELEGRAM_CHAT_ID задан, но не содержит ни одного корректного chat_id",
             file=sys.stderr,
         )
         return 1
@@ -136,10 +168,7 @@ def main() -> int:
             new_rate=rate,
             new_time=log_timestamp,
         )
-        try:
-            send_telegram(bot_token, chat_id, message)
-        except Exception as exc:  # noqa: BLE001
-            print(f"Ошибка отправки сообщения в Telegram: {exc}", file=sys.stderr)
+        if not send_telegram_to_all(bot_token, chat_ids, message):
             log.setdefault("history", []).append(
                 {"rate": rate, "timestamp": log_timestamp, "alert_sent": False}
             )

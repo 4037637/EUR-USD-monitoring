@@ -2013,6 +2013,11 @@
       "rate": 1.1518,
       "timestamp": "31.07.2026 10:00:55",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1514,
+      "timestamp": "31.07.2026 10:15:25",
+      "alert_sent": false
     }
   ]
 }

@@ -4968,6 +4968,11 @@
       "rate": 1.1666,
       "timestamp": "19.08.2026 17:00:54",
       "alert_sent": true
+    },
+    {
+      "rate": 1.1667,
+      "timestamp": "19.08.2026 17:15:28",
+      "alert_sent": false
     }
   ]
 }

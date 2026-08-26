@@ -6013,6 +6013,11 @@
       "rate": 1.1677,
       "timestamp": "26.08.2026 14:15:31",
       "alert_sent": true
+    },
+    {
+      "rate": 1.1677,
+      "timestamp": "26.08.2026 14:30:41",
+      "alert_sent": false
     }
   ]
 }

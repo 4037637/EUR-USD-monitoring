@@ -6263,6 +6263,11 @@
       "rate": 1.1655,
       "timestamp": "27.08.2026 16:15:29",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1654,
+      "timestamp": "27.08.2026 16:30:42",
+      "alert_sent": false
     }
   ]
 }

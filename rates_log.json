@@ -8013,6 +8013,11 @@
       "rate": 1.1625,
       "timestamp": "08.09.2026 15:45:28",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1627,
+      "timestamp": "08.09.2026 16:00:56",
+      "alert_sent": false
     }
   ]
 }

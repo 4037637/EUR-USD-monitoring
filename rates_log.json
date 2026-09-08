@@ -8018,6 +8018,11 @@
       "rate": 1.1627,
       "timestamp": "08.09.2026 16:00:56",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1623,
+      "timestamp": "08.09.2026 16:15:27",
+      "alert_sent": false
     }
   ]
 }

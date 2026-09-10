@@ -8443,6 +8443,11 @@
       "rate": 1.1605,
       "timestamp": "10.09.2026 15:15:25",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1608,
+      "timestamp": "10.09.2026 15:30:41",
+      "alert_sent": false
     }
   ]
 }

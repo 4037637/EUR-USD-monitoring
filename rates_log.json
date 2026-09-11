@@ -8553,6 +8553,11 @@
       "rate": 1.1608,
       "timestamp": "11.09.2026 09:45:30",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1609,
+      "timestamp": "11.09.2026 10:00:45",
+      "alert_sent": false
     }
   ]
 }

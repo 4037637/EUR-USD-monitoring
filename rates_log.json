@@ -8888,6 +8888,11 @@
       "rate": 1.1538,
       "timestamp": "14.09.2026 15:30:42",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1538,
+      "timestamp": "14.09.2026 15:45:29",
+      "alert_sent": false
     }
   ]
 }

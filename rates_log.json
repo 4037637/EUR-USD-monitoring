@@ -8773,6 +8773,11 @@
       "rate": 1.1553,
       "timestamp": "14.09.2026 09:45:28",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1549,
+      "timestamp": "14.09.2026 10:00:55",
+      "alert_sent": false
     }
   ]
 }

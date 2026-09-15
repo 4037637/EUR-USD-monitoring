@@ -9163,6 +9163,11 @@
       "rate": 1.1543,
       "timestamp": "15.09.2026 18:15:47",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1543,
+      "timestamp": "15.09.2026 18:30:39",
+      "alert_sent": false
     }
   ]
 }

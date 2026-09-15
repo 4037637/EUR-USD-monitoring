@@ -9183,6 +9183,11 @@
       "rate": 1.1543,
       "timestamp": "15.09.2026 19:15:28",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1541,
+      "timestamp": "15.09.2026 19:30:40",
+      "alert_sent": false
     }
   ]
 }

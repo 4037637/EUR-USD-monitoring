@@ -9168,6 +9168,11 @@
       "rate": 1.1543,
       "timestamp": "15.09.2026 18:30:39",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1545,
+      "timestamp": "15.09.2026 18:45:27",
+      "alert_sent": false
     }
   ]
 }

@@ -9018,6 +9018,11 @@
       "rate": 1.1537,
       "timestamp": "15.09.2026 11:00:50",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1539,
+      "timestamp": "15.09.2026 11:15:32",
+      "alert_sent": false
     }
   ]
 }

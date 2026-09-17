@@ -9478,6 +9478,11 @@
       "rate": 1.1476,
       "timestamp": "17.09.2026 12:00:49",
       "alert_sent": false
+    },
+    {
+      "rate": 1.148,
+      "timestamp": "17.09.2026 12:15:25",
+      "alert_sent": false
     }
   ]
 }

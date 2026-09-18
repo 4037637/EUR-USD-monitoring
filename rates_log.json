@@ -9633,6 +9633,11 @@
       "rate": 1.148,
       "timestamp": "17.09.2026 19:45:25",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1486,
+      "timestamp": "18.09.2026 09:00:48",
+      "alert_sent": false
     }
   ]
 }

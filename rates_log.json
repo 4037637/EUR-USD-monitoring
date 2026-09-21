@@ -9943,6 +9943,11 @@
       "rate": 1.1485,
       "timestamp": "21.09.2026 13:15:26",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1488,
+      "timestamp": "21.09.2026 13:30:37",
+      "alert_sent": false
     }
   ]
 }

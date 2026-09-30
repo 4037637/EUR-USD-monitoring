@@ -1,7 +1,7 @@
 {
   "last_alert": {
-    "rate": 1.1365,
-    "timestamp": "30.09.2026 12:15:23"
+    "rate": 1.1353,
+    "timestamp": "30.09.2026 14:00:48"
   },
   "history": [
     {
@@ -11493,6 +11493,11 @@
       "rate": 1.136,
       "timestamp": "30.09.2026 13:45:24",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1353,
+      "timestamp": "30.09.2026 14:00:48",
+      "alert_sent": true
     }
   ]
 }

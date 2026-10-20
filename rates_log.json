@@ -14533,6 +14533,11 @@
       "rate": 1.1218,
       "timestamp": "20.10.2026 12:15:27",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1215,
+      "timestamp": "20.10.2026 12:30:38",
+      "alert_sent": false
     }
   ]
 }

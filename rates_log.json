@@ -16818,6 +16818,11 @@
       "rate": 1.1184,
       "timestamp": "03.11.2026 16:45:43",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1197,
+      "timestamp": "03.11.2026 17:01:02",
+      "alert_sent": false
     }
   ]
 }

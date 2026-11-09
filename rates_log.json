@@ -17568,6 +17568,11 @@
       "rate": 1.1197,
       "timestamp": "09.11.2026 11:15:29",
       "alert_sent": false
+    },
+    {
+      "rate": 1.1197,
+      "timestamp": "09.11.2026 11:30:43",
+      "alert_sent": false
     }
   ]
 }

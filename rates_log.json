@@ -20158,6 +20158,11 @@
       "rate": 1.0937,
       "timestamp": "25.11.2026 09:15:34",
       "alert_sent": false
+    },
+    {
+      "rate": 1.0942,
+      "timestamp": "25.11.2026 09:30:47",
+      "alert_sent": false
     }
   ]
 }

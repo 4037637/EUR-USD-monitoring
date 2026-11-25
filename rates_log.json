@@ -20343,6 +20343,11 @@
       "rate": 1.0987,
       "timestamp": "25.11.2026 18:45:38",
       "alert_sent": false
+    },
+    {
+      "rate": 1.0988,
+      "timestamp": "25.11.2026 19:01:08",
+      "alert_sent": false
     }
   ]
 }
